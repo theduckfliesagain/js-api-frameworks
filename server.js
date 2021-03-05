@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const mealRoutes = require('./controllers/meals');
+const mealRoutes = require('./controllers/meal');
 app.use('/meals', mealRoutes);
 
 app.get('/', (req, res) => {
