@@ -18,21 +18,25 @@ class Meal {
             const meal = new Meal(mealData);
             return meal;
         } catch (err) {
-            throw new Error('That meal does not exist!');
+            throw new Error('No meal is assigned to that ID.');
         }
     }
 
     static create(meal) {
         const newMealId = menuData.length + 1;
-        const newmeal = new Meal({ id: newMealId, ...meal });
+        const newMeal = new Meal({ id: newMealId, ...meal });
         menuData.push(newMeal);
         return newMeal;
     }
 
-    // destroy() {
-    //     const cat = catsData.filter((cat) => cat.id === this.id)[0];
-    //     catsData.splice(catsData.indexOf(cat), 1);
-    // }
+    destroy() {
+        const meal = menuData.filter((meal) => meal.id === this.id)[0];
+        menuData.splice(menuData.indexOf(meal), 1);
+    }
+
+    updatePrice(price) {
+        this.price = price;
+    }
 }
 
-module.exports = Cat;
+module.exports = Meal;
