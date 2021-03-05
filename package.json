@@ -15,7 +15,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "coverage": "jest --coverage --silent",
-    "test": "jest"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
