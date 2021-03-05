@@ -12,7 +12,9 @@
     "nodemon": "^2.0.6",
     "supertest": "^6.1.3"},
   "scripts": {
-    "test": "jest"
+    "start": "nodemon index.js",
+    "test": "jest",
+    "coverage": "jest --coverage --silent"
   },
   "repository": {
     "type": "git",
