@@ -5,7 +5,7 @@ describe('API server', () => {
     let api;
     let testMeal = {
         name: 'Pepperoni pizza',
-        price: '£10.00',
+        price: 4.50,
     };
 
     beforeAll(() => {
@@ -54,12 +54,12 @@ describe('API server', () => {
         expect(updatedMeals.body.length).toBe(3);
     });
 
-    it('respons to updating data for a meal with 200', (done) => {
-        request(api).patch('/meals/2', {price: '£12.00'}).expect(404, done);
+    it('responds to updating data for a meal with 200', (done) => {
+        request(api).patch('/meals/2', {price: 5.00}).expect(404, done);
     })
 
     it('responds to non existing paths with 404', (done) => {
-        request(api).get('/no').expect(404, done);
+        request(api).get('/discounts').expect(404, done);
     });
 
     it('responds to invalid method request with 405', (done) => {
