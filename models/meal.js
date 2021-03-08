@@ -34,8 +34,11 @@ class Meal {
         menuData.splice(menuData.indexOf(meal), 1);
     }
 
-    updatePrice(price) {
-        this.price = price;
+    update(newMeal) {
+        const meal = menuData.filter((meal) => meal.id === this.id)[0];
+        meal.name= newMeal.name;
+        meal.price = newMeal.price;
+        return this;
     }
 }
 

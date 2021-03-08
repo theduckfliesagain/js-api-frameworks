@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-    res.status(405).send('Not allowd!');
+    res.status(405).send('Not allowed!');
 });
 
 module.exports = app;
